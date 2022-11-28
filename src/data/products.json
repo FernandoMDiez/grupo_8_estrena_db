@@ -1,0 +1,132 @@
+[
+ {
+  "id": 1,
+  "name": "Death Puff       ",
+  "description": "Hermosa Chaqueta de cuero",
+  "category": "2",
+  "size": "3",
+  "color": "2",
+  "price": "25",
+  "image": "campera-puff1.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Killer Jacket  ",
+  "description": "Hermosa Chaqueta ",
+  "category": "2",
+  "size": "3",
+  "color": "1",
+  "price": "$35000",
+  "image": "campera-cuero.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Sky Puff ",
+  "description": "Hermosa Chaqueta",
+  "category": "1",
+  "size": "1",
+  "color": "1",
+  "price": "$22000",
+  "image": "campera-puff2.jpg"
+ },
+ {
+  "id": 4,
+  "image": "pantalon.jpg",
+  "name": "Scream Pants ",
+  "description": "Pantalon con bolsillo",
+  "category": "2",
+  "size": "5",
+  "color": "0",
+  "price": "$15990"
+ },
+ {
+  "id": 5,
+  "name": "Bermuda Goth  level  one   ",
+  "description": "Pantalon con bolsillo ancho corto",
+  "category": "3",
+  "size": "4",
+  "color": "1",
+  "price": "$10005",
+  "image": "image-1666741943759.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Spikes Pants     ",
+  "description": "Pantalon con bolsillo",
+  "category": "2",
+  "size": "4",
+  "color": "4",
+  "price": "$16000",
+  "image": "puas.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Line Sweater",
+  "description": "Este es el sweater",
+  "category": "3",
+  "size": "3",
+  "color": "White",
+  "price": "$14000",
+  "image": "sweater2.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Skull Sweater",
+  "description": "Este es el sweater",
+  "category": "3",
+  "size": "1",
+  "color": "Red",
+  "price": "$14000",
+  "image": "sweater.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Bad T-Shirt  ",
+  "description": "Otro sweater",
+  "category": "3",
+  "size": "2",
+  "color": "1",
+  "price": "$8990",
+  "image": "reme.jpg"
+ },
+ {
+  "id": 10,
+  "name": "producto prueba",
+  "description": "",
+  "category": "1",
+  "size": "1",
+  "color": "1",
+  "price": "400",
+  "image": "image-default.jpg"
+ },
+ {
+  "id": 11,
+  "name": "producto prueba 625   ",
+  "description": "",
+  "category": "1",
+  "size": "3",
+  "color": "2",
+  "price": "500",
+  "image": "image-default.jpg"
+ },
+ {
+  "id": 12,
+  "name": "producto prueba 625sadasd ",
+  "description": "",
+  "category": "2",
+  "size": "3",
+  "color": "1",
+  "price": "500",
+  "image": "image-1666746468896.jpg"
+ },
+ {
+  "id": 13,
+  "name": "  Remerita",
+  "description": "dddwwwwwdw",
+  "category": "2",
+  "size": "3",
+  "color": "2",
+  "price": "10",
+  "image": "image-1669161802743.jpg"
+ }
+]

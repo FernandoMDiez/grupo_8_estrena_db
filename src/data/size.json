@@ -1,0 +1,22 @@
+[
+  {
+    "sizeId": 1,
+    "nombre": "XS"
+  },
+  {
+    "sizeId": 2,
+    "nombre": "S"
+  },
+  {
+    "sizeId": 3,
+    "nombre": "M"
+  },
+  {
+    "sizeId": 4,
+    "nombre": "L"
+  },
+  {
+    "sizeId": 5,
+    "nombre": "XL"
+  }
+]

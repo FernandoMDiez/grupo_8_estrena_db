@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrena</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style-product-edition.css">
+  <link rel="stylesheet" href="/css/style-general.css">
+</head>
+
+<body>
+  <!-- se obtiene el header de la carpeta  Partials -->
+  <%- include("../partials/header") %>
+
+    <main>
+      <form method="POST" class="product-edition" action="/products/product-creation" enctype="multipart/form-data">
+        <div class=" inputs-container">
+          <div class="title">Creacion de producto</div>
+          <div class="info-input">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" placeholder="Nombre de Producto"
+              value="<%= typeof old !='undefined'  ?  old.name : ' ' %> ">
+            <% if (typeof errors!="undefined" ) { %>
+              <% errors.forEach(error=> { %>
+                <% if (error.param=="name" ) { %>
+                  <p>Errores: <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }) %>
+                      <% } %>
+          </div>
+          <div class="info-input">
+            <label for="description">Descripcion</label>
+            <textarea type="text" name="description" id="description" placeholder="Detalle de Producto"></textarea>
+          </div>
+
+          <!--  Se cargan las imagenes -->
+          <div class="info-input">
+            <label for="image">Imagen</label>
+            <img src="" alt="">
+            <input type="file" id="image" name="image">
+          </div>
+          <!--  Se cargan las imagenes -->
+
+
+          <!--  Aqui se cargan las categorias dinamicamente -->
+          <div class="info-input">
+            <label for="category">Categoria</label>
+            <select name="category" id="category" required>
+              <option value="Seleccionar">Seleccionar </option>
+              <% categories.forEach(category=> { %>
+                <option value="<%= category.categoriaId %>">
+                  <%= category.nombre %>
+                </option>
+                <% }) %>
+
+            </select>
+            <% if (typeof errors!="undefined" ) { %>
+              <% errors.forEach(error=> { %>
+                <% if (error.param=="category" ) { %>
+                  <p>Errores: <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }) %>
+                      <% } %>
+          </div>
+
+
+          <!--  Aqui se crean los productos dinamicamente -->
+
+
+          <!--  Aqui se cargan las categorias dinamicamente -->
+          <div class="info-input">
+            <label for="size">Talla</label>
+            <select name="size" id="size" required>
+              <option value="Seleccionar">Seleccionar </option>
+              <% sizes.forEach(size=> { %>
+                <option value="<%= size.sizeId %>">
+                  <%= size.nombre %>
+                </option>
+                <% }) %>
+
+            </select>
+            <% if (typeof errors!="undefined" ) { %>
+              <% errors.forEach(error=> { %>
+                <% if (error.param=="size" ) { %>
+                  <p>Errores: <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }) %>
+                      <% } %>
+          </div>
+          <!--  Aqui se crean los categorias dinamicamente -->
+
+
+
+          <!--  Aqui se cargan los colores dinamicamente -->
+          <div class="info-input">
+            <label for="color">Color</label>
+            <select name="color" id="color" required>
+              <option value="Seleccionar">Seleccionar </option>
+              <% colores.forEach(color=> { %>
+                <option value="<%= color.colorId %>">
+                  <%= color.nombre %>
+                </option>
+                <% }) %>
+
+            </select>
+            <% if (typeof errors!="undefined" ) { %>
+              <% errors.forEach(error=> { %>
+                <% if (error.param=="color" ) { %>
+                  <p>Errores: <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }) %>
+                      <% } %>
+
+
+
+          </div>
+          <!--  Aqui se crean los colores dinamicamente -->
+
+
+          <div class="info-input">
+            <label for="price">Precio</label>
+            <input type="number" name="price" id="price" placeholder="000"
+              value="<%= typeof old !='undefined'  ?  old.price : ' ' %> ">
+            <% if (typeof errors!="undefined" ) { %>
+              <% errors.forEach(error=> { %>
+                <% if (error.param=="price" ) { %>
+                  <p>Errores: <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }) %>
+                      <% } %>
+          </div>
+
+
+          <div class="submit-button">
+            <button type="submit">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!-- se obtiene el footer de la carpeta Partials -->
+    <%- include("../partials/footer") %>
+
+</body>
+
+</html>

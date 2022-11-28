@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+
+      <main>
+
+        <form method="POST" action="/users/user-register" enctype="multipart/form-data">
+          <div class="register-container">
+
+            <h1 class="title">Crear Cuenta</h1>
+            <div class="inputs">
+              <label for="firstName">Nombre</label>
+              <input type="text" name="firstName" id="firstName" placeholder="Nombre"
+                value="<%= typeof old !='undefined'  ?  old.firstName : ' ' %> ">
+              <% if (typeof errors!="undefined" && errors !="" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="firstName" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+
+            </div>
+            <div class="inputs">
+              <label for="lastName">Apellido</label>
+              <input type="text" name="lastName" id="lastName" placeholder="Apellido"
+                value="<%= typeof old !='undefined'  ?  old.lastName : ' ' %> ">
+              <% if (typeof errors!="undefined" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="lastName" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+            </div>
+
+            <!--  Se cargan las imagenes -->
+            <div class="info-input">
+              <label for="image">Imagen</label>
+              <img src="" alt="">
+              <input type="file" id="image" name="image">
+            </div>
+            <!--  Se cargan las imagenes -->
+
+            <div class="inputs">
+              <label for="tel">Telefono</label>
+              <input type="tel" name="tel" id="tel" placeholder="Telefono"
+                value="<%= typeof old !='undefined'  ?  old.tel : ' ' %> ">
+              <% if (typeof errors!="undefined" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="tel" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+            </div>
+
+
+            <!--  Aqui se cargan las categorias dinamicamente -->
+            <div class="inputs">
+              <label for="category">Categoria</label>
+              <select name="category" id="category" required>
+                <option value="Seleccionar">Seleccionar </option>
+                <% categories.forEach(category=> { %>
+                  <option value="<%= category.uscatd %>">
+                    <%= category.nombre %>
+                  </option>
+                  <% }) %>
+
+              </select>
+              <% if (typeof errors!="undefined" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="category" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+
+            </div>
+
+
+            <!--  Aqui se cargan las categorias dinamicamente -->
+            <div class="inputs">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" placeholder="Mail"
+                value="<%= typeof old !='undefined'  ?  old.email : ' ' %> ">
+              <% if (typeof errors!="undefined" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="email" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+            </div>
+            <div class="inputs">
+              <label for="password">Contraeña</label>
+              <input type="password" name="password" id="password" placeholder="Contraeña"
+                value="<%= typeof old !='undefined'  ?  old.password : '' %>">
+              <% if (typeof errors!="undefined" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="password" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+            </div>
+
+            <div class="inputs">
+              <label for="confirmPassword">Confirmar contraseña</label>
+              <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña"
+                value="<%= typeof old !='undefined'  ?  old.confirmPassword : '' %>">
+              <% if (typeof errors!="undefined" ) { %>
+                <% errors.forEach(error=> { %>
+                  <% if (error.param=="confirmPassword" ) { %>
+                    <p>Errores: <%= error.msg %>
+                    </p>
+                    <% } %>
+                      <% }) %>
+                        <% } %>
+            </div>
+
+
+
+            <div class="account-buttons">
+              <button type="reset" class="account res">Cancelar</button>
+              <button type="submit" class="account sub">Crear Cuenta</button>
+            </div>
+
+
+
+            <p>O Ingresar con: </p>
+            <div class="socialmedia-buttons">
+              <button type="submit" class="socialmedia">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"
+                  alt="">
+              </button>
+              <button type="submit" class="socialmedia">
+                <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png" alt="">
+              </button>
+              <button type="submit" class="socialmedia">
+                <img
+                  src="https://www.canaljesustv.com/wp-content/uploads/2016/06/twitter-round-logo-png-transparent-background-7.png"
+                  alt="">
+              </button>
+            </div>
+
+          </div>
+        </form>
+
+
+      </main>
+      <!-- se obtiene el footer de la carpeta Partials -->
+      <%- include("../partials/footer") %>
+
+  </body>
+
+</html>

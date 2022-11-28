@@ -1,0 +1,16 @@
+[
+  {
+    "uscatd": 1,
+    "nombre": "Administrador"
+  },
+
+  {
+    "uscatd": 2,
+    "nombre": "Vendedor"
+  },
+
+  {
+    "uscatd": 3,
+    "nombre": "Comprador"
+  }
+]

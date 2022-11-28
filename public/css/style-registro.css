@@ -1,0 +1,154 @@
+main {
+  height: 100%;
+}
+
+main form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.register-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #000000a1;
+  color: #F5F5F5;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(175, 9, 9);
+  margin: 1rem;
+}
+
+p,
+h1 {
+  margin: 1rem 0;
+  flex-grow: 0.8;
+  flex-basis: 100%;
+}
+
+input {
+  background-color:rgba(255, 255, 255, 0.945);
+  font-size: 1rem;
+  border-radius: 5px;
+  color: rgba(128, 128, 128, 0.596);
+  margin: 1rem 0;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.432);
+}
+
+input:focus {
+  background-color: #d4d4d4;
+  color: black;
+  font-weight: bold;
+}
+
+input:invalid {
+  border-bottom: 2px solid red;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.inputs input {
+  width: 100%;
+  padding: 0.5rem;
+  color: #F5F5F5;
+  border: none;
+  border-bottom: 1px solid rgba(138, 131, 131, 0.63);
+}
+
+.account-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.account {
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.account.res {
+  background-color: transparent;
+  color: #F5F5F5;
+  border: 1px solid #F5F5F5;
+}
+
+.account.sub {
+  background-color: #800000;
+  color: #F5F5F5;
+  border: 1px solid transparent;
+}
+
+.account:hover {
+  background-color: #F5F5F5;
+  color: black;
+  border: 1px solid transparent;
+}
+
+.socialmedia-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.socialmedia {
+  height: 2rem;
+  width: 2rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.socialmedia img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+p {
+  text-align: center;
+}
+
+@media (min-width: 361px) {
+  .register-container {
+    margin: 10px;
+    margin-top: 10%;
+    width: 40%;
+  }
+  .account-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 769px) {
+  .register-container {
+    width: 40%;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1279px) {
+  .register-container {
+    width: 40%;
+  }
+}

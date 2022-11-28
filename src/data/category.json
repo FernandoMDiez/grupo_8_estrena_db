@@ -1,0 +1,16 @@
+[
+  {
+    "categoriaId": "1",
+    "nombre": "Jacket"
+  },
+
+  {
+    "categoriaId": "2",
+    "nombre": "Pants"
+  },
+
+  {
+    "categoriaId": "3",
+    "nombre": "Top"
+  }
+]

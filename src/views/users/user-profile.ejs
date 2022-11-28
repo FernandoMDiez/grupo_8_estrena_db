@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+
+  <body>
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+
+
+      <main>
+        <form method="POST" action="/users/user-profile">
+          <div class="register-container">
+
+            <h1 class="title">Bienvenido</h1>
+            <div class="inputs">
+              <p>Nombre</p>
+              <p> Usuario: <%= userL.firstName %>
+              </p>
+              <img src="/images/users/<%= userL.image %>" alt="">
+
+              <div class="account-buttons">
+                <button type="reset" class="account res">Cancelar</button>
+                <button type="submit" class="account sub">Ingresar</button>
+              </div>
+
+            </div>
+
+          </div>
+        </form>
+      </main>
+      <!-- se obtiene el footer de la carpeta Partials -->
+      <%- include("../partials/footer") %>
+  </body>
+
+</html>

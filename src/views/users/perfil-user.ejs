@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+      <h1>Listado de Perfiles</h1>
+      <ul>
+        <% for( let i=0; i < perfiles.length; i++ ) { %>
+          <li>
+            <a href="users/perfil-detail/<%= perfiles[i].idPerfil %>">
+              <%= perfiles[i].nameCategory %>
+            </a>
+          </li>
+          <% } %>
+      </ul>
+
+  </body>
+
+</html>

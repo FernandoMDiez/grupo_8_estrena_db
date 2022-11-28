@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrena</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style-product-cart.css">
+  <link rel="stylesheet" href="/css/style-general.css">
+</head>
+
+<body>
+
+  <!-- se obtiene el header de la carpeta  Partials -->
+  <%- include("../partials/header") %>
+
+    <main>
+      <div class="main-container">
+        <div class="box-title1">
+          <div class="title1">Carrito de Compras</div>
+          <div class="title2">Tu Orden</div>
+        </div>
+        <div class="products-container">
+          <div class="product">
+            <div class="img-product">
+              <img src="/images/f4de964710087fc0e9f0ddf5f0c4d5e5.jpg" alt="Imagen del producto" class="product_img">
+            </div>
+            <div class="desc-product">
+              <p>Descripción</p>
+            </div>
+            <div class="buy-box">
+              <i class="fa-solid fa-plus"></i>
+              <input type="number" value="1"></input>
+              <i class="fa-solid fa-minus"></i>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img-product">
+              <img src="/images/f4de964710087fc0e9f0ddf5f0c4d5e5.jpg" alt="Imagen del producto" class="product_img">
+            </div>
+            <div class="desc-product">
+              <p>Descripción</p>
+            </div>
+            <div class="buy-box">
+              <i class="fa-solid fa-plus"></i>
+              <input type="number" value="1"></input>
+              <i class="fa-solid fa-minus"></i>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img-product">
+              <img src="/images/f4de964710087fc0e9f0ddf5f0c4d5e5.jpg" alt="Imagen del producto" class="product_img">
+            </div>
+            <div class="desc-product">
+              <p>Descripción</p>
+            </div>
+            <div class="buy-box">
+              <i class="fa-solid fa-plus"></i>
+              <input type="number" value="1"></input>
+              <i class="fa-solid fa-minus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="purchase-values">
+          <div class="data">
+            <p>Subtotal</p>
+            <p>Vlr Subtotal</p>
+          </div>
+          <div class="data">
+            <p>Taxes</p>
+            <p>Vlr Taxes</p>
+          </div>
+          <div class="data total">
+            <p>Total</p>
+            <p>Vlr Total</p>
+          </div>
+        </div>
+        <div class="purchase-buttons">
+          <button type="reset" class="borrar">Seguir comprando</button>
+          <button type="submit" class="enviar">Pagar ahora</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- se obtiene el footer de la carpeta Partials -->
+    <%- include("../partials/footer") %>
+
+
+</body>
+
+</html>

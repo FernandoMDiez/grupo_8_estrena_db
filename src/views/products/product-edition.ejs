@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrena</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style-product-edition.css">
+  <link rel="stylesheet" href="/css/style-general.css">
+</head>
+
+<body>
+  <!-- se obtiene el header de la carpeta  Partials -->
+  <%- include("../partials/header") %>
+
+    <main>
+      <form method="POST" class="product-edition" action="/products/product-edition/<%= product.id %>?_method=PUT"
+        enctype="multipart/form-data">
+        <div class=" inputs-container">
+          <div class="title">Edicion de producto</div>
+          <div class="info-input">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" value="<%=product.name%> ">
+          </div>
+          <div class="info-input">
+            <label for="description">Descripcion</label>
+            <textarea type="text" name="description" id="description"><%=product.description%></textarea>
+          </div>
+
+
+          <!--  Se cargan las imagenes -->
+          <div class="info-input">
+            <label for="image">Imagen</label>
+            <img src="/images/<%=product.image%>" alt="">
+            <input type="file" id="image" name="image" accept="image/*">
+          </div>
+          <!--  Se cargan las imagenes -->
+
+
+          <!--  Aqui se cargan las categorias dinamicamente -->
+          <div class="info-input">
+            <label for="category">Categoria</label>
+            <select name="category" id="category">
+
+              <% categories.forEach(category=> { %>
+                <% if (category.categoriaId==product.category ) { %>
+                  <option value="<%= category.categoriaId %>" selected>
+                    <%= category.nombre %>
+                  </option>
+                  <% } %>
+
+                    <option value="<%= category.categoriaId %>">
+                      <%= category.nombre %>
+                    </option>
+                    <% }) %>
+            </select>
+          </div>
+          <!--  Aqui se crean los productos dinamicamente -->
+
+
+          <!--  Aqui se cargan las categorias dinamicamente -->
+          <div class="info-input">
+            <label for="size">Talla</label>
+            <select name="size" id="size">
+
+              <% sizes.forEach(size=> { %>
+                <% if (size.sizeId==product.size ) { %>
+                  <option value="<%= size.sizeId %>" selected>
+                    <%= size.nombre %>
+                  </option>
+                  <% } %>
+
+                    <option value="<%= size.sizeId %>">
+                      <%= size.nombre %>
+                    </option>
+                    <% }) %>
+            </select>
+          </div>
+          <!--  Aqui se crean los categorias dinamicamente -->
+
+
+
+          <!--  Aqui se cargan los colores dinamicamente -->
+          <div class="info-input">
+            <label for="color">Color</label>
+            <select name="color" id="color">
+
+              <% colores.forEach(color=> { %>
+                <% if (color.colorId==product.color ) { %>
+                  <option value="<%= color.colorId %>" selected>
+                    <%= color.nombre %>
+                  </option>
+                  <% } %>
+
+                    <option value="<%= color.colorId %>">
+                      <%= color.nombre %>
+                    </option>
+                    <% }) %>
+            </select>
+          </div>
+          <!--  Aqui se crean los colores dinamicamente -->
+
+
+
+
+
+
+
+          <div class="info-input">
+            <label for="price">Precio</label>
+            <input type="text" name="price" id="price" value="<%=product.price%>">
+          </div>
+          <div class="submit-button">
+            <button type="submit">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!-- se obtiene el footer de la carpeta Partials -->
+    <%- include("../partials/footer") %>
+
+</body>
+
+</html>

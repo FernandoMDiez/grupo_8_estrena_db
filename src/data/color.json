@@ -1,0 +1,21 @@
+[
+  {
+    "colorId": "1",
+    "nombre": "Blanco"
+  },
+
+  {
+    "colorId": "2",
+    "nombre": "Negro"
+  },
+
+  {
+    "colorId": "3",
+    "nombre": "Rojo"
+  },
+
+  {
+    "colorId": "4",
+    "nombre": "Amarillo"
+  }
+]

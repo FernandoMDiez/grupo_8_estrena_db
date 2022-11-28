@@ -1,0 +1,173 @@
+main {
+  height: 100%;
+}
+main .product {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgrey;
+  background: #F5F5F5;
+}
+main .product .gallery {
+  width: 100%;
+  box-shadow: 0px 0px 20px 0px lightgrey;
+  margin-bottom: 2rem;
+}
+main .product .gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+main .product .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+main .product .info .title {
+  width: 100%;
+  text-align: left;
+}
+main .product .info .sizes {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 2.5rem;
+  gap: 1rem;
+}
+main .product .info .sizes .selector {
+  width: 5rem;
+  height: 100%;
+}
+main .product .info .sizes .selector select {
+  height: 100%;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+main .product .info .units {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 2.5rem;
+  gap: 1rem;
+}
+main .product .info .units .unit-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+main .product .info .units .unit-container .selector {
+  width: 5rem;
+  height: 100%;
+}
+main .product .info .units .unit-container .selector input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+main .product .info .units .unit-container .avaliable {
+  width: 47.5%;
+  font-size: 0.8rem;
+  color: gray;
+}
+main .product .info .price {
+  font-size: 2rem;
+  color: #0040ff;
+}
+main .product .info .botones {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+main .product .info .botones .addcart {
+  background-image: url("../images/papel-pintado-de-textura-de-papel-negro-42272-scaled.jpg");
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #F5F5F5;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+main .other {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #000000a1;
+}
+main .other h3 {
+  margin: 1rem 0;
+}
+main .other .items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 1rem;
+}
+main .other .items .item {
+  height: 10rem;
+  width: 8rem;
+  width: 100%;
+  background: gray;
+}
+
+
+@media (min-width: 800px) {
+  main {
+    max-width: 1320px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  main .other {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin: 1rem;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+  main .other .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  main .other .items .item {
+    width: 30%;
+  }
+  main .product {
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+  main .product .info {
+    height: 100%;
+  }
+  main .product .info .price {
+    margin-bottom: 5rem;
+  }
+
+  
+}
+/*# sourceMappingURL=style-product-det.css.map */
+
+/*# sourceMappingURL=style-product-det.css.map */
