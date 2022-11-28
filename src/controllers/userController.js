@@ -1,4 +1,4 @@
-let db = require("../../database/models");
+let db = require("../database/models");
 
 const controller = {
   // Lista tood los perfiles
