@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+      <main>
+        <form method="POST" action="/users/perfil-user-create">
+
+
+          <div class="register-container">
+            <h1>Crear un Perfil</h1>
+            <div class="inputs">
+              <label for="nameCategory">Nombre</label>
+              <input type="text" name="nameCategory" required>
+            </div>
+            <div class="submit-button">
+              <button type="submit">
+                Guardar
+              </button>
+
+            </div>
+          </div>
+        </form>
+      </main>
+      <!-- se obtiene el footer de la carpeta Partials -->
+      <%- include("../partials/footer") %>
+  </body>
+
+</html>

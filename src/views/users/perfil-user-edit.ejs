@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+      <main>
+        <form method="POST" action="/users/perfil-user-edit/<%= perfilE.idPerfil %>">
+          <div class="register-container">
+            <h1> Editar Perfil</h1>
+            <div class="inputs">
+              <label for="nameCategory">Nombre</label>
+              <input type="text" name="nameCategory" value=" <%= perfilE.nameCategory %>" required>
+            </div>
+
+            <div class="submit-button">
+              <button type="submit"> Guardar</button>
+            </div>
+            <div class="submit-button">
+              <button type="submit"> Cancelar</button>
+            </div>
+          </div>
+        </form>
+      </main>
+  </body>
+
+</html>

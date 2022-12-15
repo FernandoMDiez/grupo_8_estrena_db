@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+      <main>
+        <form method="POST" action="/users/perfil-user-activate/<%= perfilA.idPerfil %>">
+          <div class="register-container">
+            <h1> Activar Perfil</h1>
+            <h2>Esta seguro de Activar el perfil: <%= perfilA.nameCategory %>
+                </h1>
+                <div class="submit-button">
+                  <button type="submit"> Activar</button>
+                </div>
+                <div class="submit-button">
+                  <button type="submit"> Cancelar</button>
+                </div>
+          </div>
+        </form>
+      </main>
+  </body>
+
+</html>

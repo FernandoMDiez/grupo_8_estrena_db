@@ -21,8 +21,8 @@
               <% if (typeof errors!="undefined" && errors !="" ) { %>
                 <% errors.forEach(error=> { %>
                   <% if (error.param=="firstName" ) { %>
-                    <p>Errores: <%= error.msg %>
-                    </p>
+                    <!--    <p>Errores: <%= error.msg %>-->
+                    <!--   </p>-->
                     <% } %>
                       <% }) %>
                         <% } %>
@@ -67,19 +67,19 @@
 
             <!--  Aqui se cargan las categorias dinamicamente -->
             <div class="inputs">
-              <label for="category">Categoria</label>
-              <select name="category" id="category" required>
-                <option value="Seleccionar">Seleccionar </option>
-                <% categories.forEach(category=> { %>
-                  <option value="<%= category.uscatd %>">
-                    <%= category.nombre %>
+              <label for="idPerfil">Categoria</label>
+              <select name="idPerfil" id="idPerfil" required>
+                <option value="Seleccionar">Seleccionar Perfil</option>
+                <% user_perfil.forEach(perfil=> { %>
+                  <option value="<%= perfil.idPerfil %>">
+                    <%= perfil.nameCategory %>
                   </option>
                   <% }) %>
 
               </select>
               <% if (typeof errors!="undefined" ) { %>
                 <% errors.forEach(error=> { %>
-                  <% if (error.param=="category" ) { %>
+                  <% if (error.param=="idPerfil" ) { %>
                     <p>Errores: <%= error.msg %>
                     </p>
                     <% } %>

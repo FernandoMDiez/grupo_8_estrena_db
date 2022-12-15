@@ -3,10 +3,10 @@ const controller = require("../controllers/userController");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const validationUserCreation = require("../middlewares/userMiddlewareCreation");
-const userLogMiddleware = require("../middlewares/userLogMiddleware");
-const userVisitMiddleware = require("../middlewares/userVisitMiddleware");
-const validationUserLogin = require("../middlewares/userMiddlewareLogin");
+//const validationUserCreation = require("../middlewares/userMiddlewareCreation");
+//const userLogMiddleware = require("../middlewares/userLogMiddleware");
+//const userVisitMiddleware = require("../middlewares/userVisitMiddleware");
+//const validationUserLogin = require("../middlewares/userMiddlewareLogin");
 
 //configuracion de multer
 const storage = multer.diskStorage({
@@ -29,24 +29,49 @@ const upload = multer({ storage });
 /***********************************   INICIO - LISTAR    ************************ ***/
 
 /* ----- Get - Listar Perfiles de usuarios--- */
-router.get("/perfil-user", controller.perfilList);
+router.get("/perfil-user-list", controller.perfilList);
 
 /* ----- Get - Detalle Perfil de usuario--- */
-router.get("/perfil-detail/:id", controller.perfilDetail);
+router.get("/perfil-user-detail/:id", controller.perfilDetail);
 
+/* ----- Get - Create  Perfil de usuario--- */
+router.get("/perfil-user-create", controller.perfilAdd);
+
+/* ----- Post - Create  Perfil de usuario--- */
+router.post("/perfil-user-create", controller.perfilCreate);
+
+/* -----Get - Edit  Perfil de usuario--- */
+router.get("/perfil-user-edit/:id", controller.perfilEdit);
+
+/* -----Post - Edit  Perfil de usuario--- */
+router.post("/perfil-user-edit/:id", controller.perfilUpdate);
+
+/* -----Get - Delete  Perfil de usuario--- */
+router.get("/perfil-user-delete/:id", controller.perfilDelete);
+
+/* -----Post - Delete  Perfil de usuario--- */
+router.post("/perfil-user-delete/:id", controller.perfilDestroy);
+
+/* -----Get - Activate  Perfil de usuario--- */
+router.get("/perfil-user-activate/:id", controller.perfilActivate);
+
+/* -----Get - Activate  Perfil de usuario--- */
+router.post("/perfil-user-activate/:id", controller.perfilRestore);
 /***********************************   FIN -   LISTAR   ************************ ***/
 
 /***********************************   INICIO          REGISTER / CREATION  USER   ************************ ***/
 /* ----- Get - Registrar o Crear un Usuario --- */
-//router.get("/user-register", userLogMiddleware, controller.register);
-
+//router.get("/user-register", userLogMiddleware, controller.register); // este es el original con validacion
+router.get("/user-register", controller.register);
 /* ----- POST  Guardar El usuario Creado --- */
-//router.post(
-//"/user-register",
-//upload.single("image"),
-//validationUserCreation,
-// controller.userStore
-//);
+router.post("/user-register", upload.single("image"), controller.userStore);
+
+/*
+router.post("/user-register",upload.single("image"),validationUserCreation,controller.userStore);
+*/
+
+/* ----- Get - Listar Usuarios--- */
+router.get("/user-list", controller.userList);
 
 /***********************************    FIN     REGISTER / CREATION  USER   ************************ ***/
 

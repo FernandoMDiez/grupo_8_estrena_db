@@ -11,7 +11,7 @@ const cookie = require("cookie-parser"); // se las requiere para cookies
 /* Declaraciones para el uso por medio del acces pont en este caso app */
 var app = express(); // se declara y asigna el acces ponit
 app.use(express.json()); // Para el uso de archivos Json
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); //para que pueda mandar informacion por el formulario
 app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(express.static(path.join(__dirname, "../public"))); // Declaro la carpera Publica
 app.set("views", path.join(__dirname, "/views")); //declaracion de la carpeta wiews es la que tiene todas las vistas - EJS

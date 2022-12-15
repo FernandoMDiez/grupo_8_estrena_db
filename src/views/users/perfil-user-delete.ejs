@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+      <main>
+        <form method="POST" action="/users/perfil-user-delete/<%= perfilD.idPerfil %>">
+          <div class="register-container">
+            <h1> Eliminar Perfil</h1>
+            <h2>Esta seguro de eliminar el perfil: <%= perfilD.nameCategory %>
+                </h1>
+                <div class="submit-button">
+                  <button type="submit"> Borra</button>
+                </div>
+                <div class="submit-button">
+                  <button type="submit"> Cancelar</button>
+                </div>
+          </div>
+        </form>
+      </main>
+  </body>
+
+</html>

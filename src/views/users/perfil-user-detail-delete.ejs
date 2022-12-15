@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- se obtiene el head de la carpeta Partials -->
+<%- include("../partials/head-users") %>
+
+  <body>
+
+    <!-- se obtiene el header de la carpeta  Partials -->
+    <%- include("../partials/header") %>
+      <main>
+        <div class="register-container">
+          <h1>
+            <%= perfilD.nameCategory %>
+          </h1>
+
+          <div class="botones">
+            <button class="addcart">
+              <a href="/users/perfil-user-activate/<%= perfilD.idPerfil %>" class="action-button edit">ACTIVAR
+                PERFIL</a>
+            </button>
+          </div>
+
+
+
+        </div>
+      </main>
+  </body>
+
+</html>
