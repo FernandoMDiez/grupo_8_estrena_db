@@ -9,10 +9,10 @@
     <!-- se obtiene el header de la carpeta  Partials -->
     <%- include("../partials/header") %>
       <main>
-        <form method="POST" action="/users/perfil-user-activate/<%= perfilA.idPerfil %>">
+        <form method="POST" action="/users/perfil-user-activate/<%= perfilA.id %>">
           <div class="register-container">
             <h1> Activar Perfil</h1>
-            <h2>Esta seguro de Activar el perfil: <%= perfilA.nameCategory %>
+            <h2>Esta seguro de Activar el perfil: <%= perfilA.namePerfil %>
                 </h1>
                 <div class="submit-button">
                   <button type="submit"> Activar</button>

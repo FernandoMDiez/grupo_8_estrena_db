@@ -14,20 +14,20 @@
             <ul>
               <% for( let i=0; i < perfiles.length; i++ ) { %>
                 <li>
-                  <a href="perfil-user-detail/<%= perfiles[i].idPerfil %>">
-                    <%= perfiles[i].nameCategory %>
+                  <a href="perfil-user-detail/<%= perfiles[i].id %>">
+                    <%= perfiles[i].namePerfil %>
                   </a>
                 </li>
                 <% } %>
             </ul>
           </div>
           <div class="register-container">
-            <h1>Listado de Perfiles Borrados</h1>
+            <h1>Listado de Usuarios Borrados</h1>
             <ul>
               <% for( let i=0; i < perfilesBorrados.length; i++ ) { %>
                 <li>
-                  <a href="perfil-user-detail/<%= perfilesBorrados[i].idPerfil %>">
-                    <%= perfilesBorrados[i].nameCategory %>
+                  <a href="perfil-user-detail/<%= perfilesBorrados[i].id%>">
+                    <%= perfilesBorrados[i].namePerfil %>
                   </a>
                 </li>
                 <% } %>

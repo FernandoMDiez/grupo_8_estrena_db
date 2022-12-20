@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   let alias = "User";
   let cols = {
-    idUser: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -24,24 +24,12 @@ module.exports = (sequelize, DataTypes) => {
     image: {
       type: DataTypes.TEXT,
     },
-    perfil_id: {
+    perfilId: {
       type: DataTypes.INTEGER,
     },
-    // created_at: {
-    //  type: DataTypes.DATE,
-    // },
-    //  updated_at: {
-    //  type: DataTypes.DATE,
-    //  },
-    //  deleted_at: {
-    //    type: DataTypes.DATE,
-    // },
   };
   let config = {
     tableName: "users",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    deletedAt: "deleted_at",
     //underscored: true,
     timestamps: true,
     paranoid: true,
@@ -49,11 +37,12 @@ module.exports = (sequelize, DataTypes) => {
 
   const User = sequelize.define(alias, cols, config);
 
-  User.associate = (models) => {
-    User.belongsTo(models.User_perfil, {
-      as: "user_perfil",
-      foreignkey: "perfil_id",
+  User.associate = function (models) {
+    User.belongsTo(models.Perfil, {
+      as: "perfil",
+      foreignKey: "perfilId",
     });
   };
+
   return User;
 };

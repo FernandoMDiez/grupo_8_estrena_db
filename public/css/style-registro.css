@@ -16,7 +16,7 @@ main form {
   flex-direction: column;
   justify-content: flex-start;
   background-color: #000000a1;
-  color: #F5F5F5;
+  color: #fbf9f9;
   width: 100%;
   padding: 2rem;
   border-radius: 10px;
@@ -32,7 +32,7 @@ h1 {
 }
 
 input {
-  background-color:rgba(255, 255, 255, 0.945);
+  background-color: rgba(219, 192, 192, 0.945);
   font-size: 1rem;
   border-radius: 5px;
   color: rgba(128, 128, 128, 0.596);
@@ -40,7 +40,7 @@ input {
 }
 
 input::placeholder {
-  color: rgba(255, 255, 255, 0.432);
+  color: rgba(74, 49, 49, 0.432);
 }
 
 input:focus {
@@ -64,7 +64,7 @@ input:invalid {
 .inputs input {
   width: 100%;
   padding: 0.5rem;
-  color: #F5F5F5;
+  color: #070707;
   border: none;
   border-bottom: 1px solid rgba(138, 131, 131, 0.63);
 }
@@ -75,7 +75,7 @@ input:invalid {
   gap: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .account {
@@ -87,18 +87,18 @@ input:invalid {
 
 .account.res {
   background-color: transparent;
-  color: #F5F5F5;
-  border: 1px solid #F5F5F5;
+  color: #f5f5f5;
+  border: 1px solid #f5f5f5;
 }
 
 .account.sub {
   background-color: #800000;
-  color: #F5F5F5;
+  color: #f5f5f5;
   border: 1px solid transparent;
 }
 
 .account:hover {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   color: black;
   border: 1px solid transparent;
 }

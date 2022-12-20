@@ -12,10 +12,10 @@ const controller = {
   /* PERFILES  INICIO*/
   perfilList: async (req, res) => {
     try {
-      perfiles = await db.User_perfil.findAll();
-      perfilesBorrados = await db.User_perfil.findAll({
+      perfiles = await db.Perfil.findAll();
+      perfilesBorrados = await db.Perfil.findAll({
         where: {
-          deleted_at: {
+          deletedAt: {
             [Op.ne]: null,
           },
         },
@@ -31,11 +31,11 @@ const controller = {
   perfilDetail: async (req, res) => {
     try {
       //console.log("id_detail: " + req.params.id);
-      const perfilD = await db.User_perfil.findByPk(req.params.id, {
+      const perfilD = await db.Perfil.findByPk(req.params.id, {
         paranoid: false,
       });
       //console.log("id_perfilD: " + perfilD);
-      if (perfilD.deleted_at == null) {
+      if (perfilD.deletedAt == null) {
         res.render("users/perfil-user-detail", { perfilD });
       } else {
         res.render("users/perfil-user-detail-delete", { perfilD });
@@ -53,10 +53,10 @@ const controller = {
   //metodo post para crear un Perfil
   perfilCreate: async (req, res) => {
     try {
-      await db.User_perfil.create({
-        nameCategory: req.body.nameCategory,
+      await db.Perfil.create({
+        namePerfil: req.body.namePerfil,
       });
-      perfiles = await db.User_perfil.findAll({ paranoid: false });
+      perfiles = await db.Perfil.findAll({ paranoid: false });
       res.redirect("/users/perfil-user-list");
       // res.render("users/perfil-user-list", { perfiles, perfilesBorrados });
     } catch (error) {
@@ -65,7 +65,7 @@ const controller = {
   },
   perfilEdit: async (req, res) => {
     try {
-      const perfilE = await db.User_perfil.findByPk(req.params.id, {
+      const perfilE = await db.Perfil.findByPk(req.params.id, {
         paranoid: false,
       });
       res.render("users/perfil-user-edit", { perfilE });
@@ -74,14 +74,14 @@ const controller = {
     }
   },
   perfilUpdate: async (req, res) => {
-    // console.log("Sientra por aqui 4 ");
+    console.log("Sientra por aqui 4 ");
     try {
       let idU = req.params.id;
-      // console.log(idU);
+      console.log(idU);
       const perfilUpdate = {
-        nameCategory: req.body.nameCategory,
+        namePerfil: req.body.namePerfil,
       };
-      await db.User_perfil.update(perfilUpdate, { where: { idPerfil: idU } });
+      await db.Perfil.update(perfilUpdate, { where: { id: idU } });
       res.redirect("/users/perfil-user-list");
     } catch (error) {
       //console.log("Sientra por aqui 5 ");
@@ -91,7 +91,7 @@ const controller = {
 
   perfilDelete: async (req, res) => {
     try {
-      const perfilD = await db.User_perfil.findByPk(req.params.id);
+      const perfilD = await db.Perfil.findByPk(req.params.id);
       res.render("users/perfil-user-delete", { perfilD });
     } catch (error) {
       //console.log("Sientra por aqui 5 ");
@@ -100,8 +100,8 @@ const controller = {
   },
   perfilDestroy: async (req, res) => {
     try {
-      await db.User_perfil.destroy({ where: { idPerfil: req.params.id } });
-      perfiles = await db.User_perfil.findAll();
+      await db.Perfil.destroy({ where: { id: req.params.id } });
+      perfiles = await db.Perfil.findAll();
       res.redirect("/users/perfil-user-list"); //, { perfiles, perfilesBorrados });
     } catch (error) {
       //console.log("Sientra por aqui 5 ");
@@ -110,7 +110,7 @@ const controller = {
   },
   perfilActivate: async (req, res) => {
     try {
-      const perfilA = await db.User_perfil.findByPk(req.params.id, {
+      const perfilA = await db.Perfil.findByPk(req.params.id, {
         paranoid: false,
       });
       res.render("users/perfil-user-activate", { perfilA });
@@ -120,8 +120,8 @@ const controller = {
   },
   perfilRestore: async (req, res) => {
     try {
-      await db.User_perfil.restore({ where: { idPerfil: req.params.id } });
-      perfiles = await db.User_perfil.findAll();
+      await db.Perfil.restore({ where: { id: req.params.id } });
+      perfiles = await db.Perfil.findAll();
       res.redirect("/users/perfil-user-list");
       //res.render("users/perfil-user-list", { perfiles, perfilesBorrados });
     } catch (error) {
@@ -142,8 +142,8 @@ const controller = {
   // CREAR UN USUARIO GET
   register: async (req, res) => {
     try {
-      let user_perfil = await db.User_perfil.findAll();
-      res.render("users/user-register", { user_perfil });
+      let user = await db.Perfil.findAll();
+      res.render("users/user-register", { user });
     } catch (error) {
       res.send(error);
     }
@@ -152,7 +152,7 @@ const controller = {
   // CREAR UN USUARIO POST
   userStore: async (req, res) => {
     try {
-      console.log(" CREAR UN USUARIO 1");
+      // console.log(" CREAR UN USUARIO 1");
       console.log(req.body);
       errors = 0; //errors = validationResult(req);
       pass = req.body.password;
@@ -166,13 +166,13 @@ const controller = {
           old: req.body,
         });
       }
-      console.log(" CREAR UN USUARIO 2");
+      //console.log(" CREAR UN USUARIO 2");
       //contrseña y confirmacion de contraseña son iguales
       if (pass === conPass) {
         pass = bcrypt.hashSync(pass, 10);
         contraseniaIguales = true;
       }
-      console.log(" CREAR UN USUARIO 3");
+      //console.log(" CREAR UN USUARIO 3");
       //let usuarioACrear = await db.User.findAll({
       //  where: {
       //    email: req.body.email,
@@ -202,7 +202,7 @@ const controller = {
       }
       */
       //console.log("salio de validar");
-      console.log(" CREAR UN USUARIO 4");
+      //console.log(" CREAR UN USUARIO 4");
       if (contraseniaIguales == true) {
         let image;
 
@@ -212,6 +212,7 @@ const controller = {
           image = "image-default.jpg";
         }
 
+        console.log("req.body.perfilId = " + req.body.perfilId);
         console.log(" CREAR UN USUARIO 5");
         await db.User.create({
           firstName: req.body.firstName,
@@ -220,7 +221,7 @@ const controller = {
           email: req.body.email,
           password: pass,
           image: image,
-          perfil_id: req.body.idPerfil,
+          perfilId: req.body.perfilId,
         });
 
         // perfiles = await db.User.findAll();
@@ -244,10 +245,12 @@ const controller = {
   userList: async (req, res) => {
     try {
       console.log(" listar 1");
-      //perfiles = await db.User_perfil.findAll();
       users = await db.User.findAll();
-      // users = await db.User.findAll({
-      //   include: [{ association: "user_perfil" }],
+      //users = await db.User.findAll({ include: { all: true } });
+      // users = await db.User.findAll();
+      //users = await db.User.findAll({  const productos = await db.Product.findAll({ include: { all: true } });
+
+      // include: [{ association: "user_perfil" }],
       //  });
       /* usersBorrados = await db.User.findAll({
         where: {
@@ -260,7 +263,7 @@ const controller = {
 */
       console.log(users);
       //  console.log("sss");
-      //res.render("users/user-list", { users });
+      res.render("users/user-list", { users });
     } catch (error) {
       res.send(error);
     }

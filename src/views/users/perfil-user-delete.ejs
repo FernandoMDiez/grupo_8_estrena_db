@@ -9,10 +9,10 @@
     <!-- se obtiene el header de la carpeta  Partials -->
     <%- include("../partials/header") %>
       <main>
-        <form method="POST" action="/users/perfil-user-delete/<%= perfilD.idPerfil %>">
+        <form method="POST" action="/users/perfil-user-delete/<%= perfilD.id %>">
           <div class="register-container">
             <h1> Eliminar Perfil</h1>
-            <h2>Esta seguro de eliminar el perfil: <%= perfilD.nameCategory %>
+            <h2>Esta seguro de eliminar el perfil: <%= perfilD.namePerfil %>
                 </h1>
                 <div class="submit-button">
                   <button type="submit"> Borra</button>
