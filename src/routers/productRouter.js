@@ -59,7 +59,7 @@ router.post(
 router.get("/product-cart", controller.productCart);
 
 /*** GET ELIMINAR PRODUCTO  ***/
-//router.get("/product-cart", controller.productCart); - Daniel
+router.delete("/delete/:id", controller.destroy);
 
 /*** GET LISTAR PRODUCTOS ***/
 //router.get("/product-cart", controller.productCart); - Daniel
