@@ -1,25 +1,25 @@
 const { check } = require("express-validator");
 
 let validationCamps = [
-  check("name")
+  check("nameProduct")
     .notEmpty()
     .withMessage("Debe ingresar un Nombre para el Producto"),
 
-  check("category").custom((value, { req }) => {
+  check("categoryId").custom((value, { req }) => {
     if (value == null || value == "Seleccionar") {
       throw new Error("Debe seleccionar una Categoria");
     } else {
       return true;
     }
   }),
-  check("size").custom((value, { req }) => {
+  check("sizeId").custom((value, { req }) => {
     if (value == null || value == "Seleccionar") {
       throw new Error("Debe seleccionar un Tamaño");
     } else {
       return true;
     }
   }),
-  check("color").custom((value, { req }) => {
+  check("colorId").custom((value, { req }) => {
     if (value == null || value == "Seleccionar") {
       throw new Error("Debe seleccionar un Color");
     } else {

@@ -22,7 +22,7 @@
           <div class="title">Creacion de producto</div>
           <div class="info-input">
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" placeholder="Nombre de Producto"
+            <input type="text" name="nameProduct" id="nameProduct" placeholder="Nombre de Producto"
               value="<%= typeof old !='undefined'  ?  old.name : ' ' %> ">
             <% if (typeof errors!="undefined" ) { %>
               <% errors.forEach(error=> { %>
@@ -49,12 +49,12 @@
 
           <!--  Aqui se cargan las categorias dinamicamente -->
           <div class="info-input">
-            <label for="category">Categoria</label>
-            <select name="category" id="category" required>
+            <label for="categoryId">Categoria</label>
+            <select name="categoryId" id="categoryId" required>
               <option value="Seleccionar">Seleccionar </option>
               <% categories.forEach(category=> { %>
-                <option value="<%= category.categoriaId %>">
-                  <%= category.nombre %>
+                <option value="<%= category.id %>">
+                  <%= category.nameCategory %>
                 </option>
                 <% }) %>
 
@@ -75,12 +75,12 @@
 
           <!--  Aqui se cargan las categorias dinamicamente -->
           <div class="info-input">
-            <label for="size">Talla</label>
-            <select name="size" id="size" required>
+            <label for="sizeId">Talla</label>
+            <select name="sizeId" id="sizeId" required>
               <option value="Seleccionar">Seleccionar </option>
               <% sizes.forEach(size=> { %>
-                <option value="<%= size.sizeId %>">
-                  <%= size.nombre %>
+                <option value="<%= size.id %>">
+                  <%= size.nameSize %>
                 </option>
                 <% }) %>
 
@@ -100,12 +100,12 @@
 
           <!--  Aqui se cargan los colores dinamicamente -->
           <div class="info-input">
-            <label for="color">Color</label>
-            <select name="color" id="color" required>
+            <label for="colorId">Color</label>
+            <select name="colorId" id="colorId" required>
               <option value="Seleccionar">Seleccionar </option>
-              <% colores.forEach(color=> { %>
-                <option value="<%= color.colorId %>">
-                  <%= color.nombre %>
+              <% colors.forEach(color=> { %>
+                <option value="<%= color.id %>">
+                  <%= color.nameColor %>
                 </option>
                 <% }) %>
 

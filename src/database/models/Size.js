@@ -1,13 +1,13 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, dataTypes) => {
   let alias = "Size";
   let cols = {
-    idColor: {
-      type: DataTypes.INTEGER,
+    id: {
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    nameColor: {
-      type: DataTypes.STRING,
+    nameSize: {
+      type: dataTypes.STRING,
     },
   };
   let config = {
