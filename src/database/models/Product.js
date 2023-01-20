@@ -1,22 +1,22 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, dataTypes) => {
   let alias = "Product";
   let cols = {
-    idProduct: {
-      type: DataTypes.INTEGER,
+    id: {
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     nameProduct: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
     },
     description: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: dataTypes.DECIMAL,
     },
     image: {
-      type: DataTypes.TEXT,
+      type: dataTypes.TEXT,
     },
   };
   let config = {
@@ -29,8 +29,8 @@ module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define(alias, cols, config);
 
   Product.associate = function (models) {
-    Product.belongsTo(models.Categorie, {
-      as: "categorie",
+    Product.belongsTo(models.Category, {
+      as: "category",
       foreignKey: "categoryId",
     });
   };

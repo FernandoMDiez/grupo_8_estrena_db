@@ -23,7 +23,7 @@
         </div>
         <div class="info">
           <h1 class="title">
-            <%=product.name%>
+            <%=product.nameProduct%>
           </h1>
 
           <div class="description">
@@ -41,14 +41,14 @@
             <select name="category" id="category">
 
               <% categories.forEach(category=> { %>
-                <% if (category.categoriaId==product.category ) { %>
-                  <option value="<%= category.categoriaId %>" selected>
-                    <%= category.nombre %>
+                <% if (category.id==product.categoryId ) { %>
+                  <option value="<%= category.id %>" selected>
+                    <%= category.nameCategory %>
                   </option>
                   <% } %>
 
-                    <option value="<%= category.categoriaId %>">
-                      <%= category.nombre %>
+                    <option value="<%= category.id %>">
+                      <%= category.nameCategory %>
                     </option>
                     <% }) %>
             </select>
@@ -60,14 +60,14 @@
             <select name="size" id="size">
 
               <% sizes.forEach(size=> { %>
-                <% if (size.sizeId==product.size ) { %>
-                  <option value="<%= size.sizeId %>" selected>
-                    <%= size.nombre %>
+                <% if (size.id==product.sizeId ) { %>
+                  <option value="<%= size.id %>" selected>
+                    <%= size.nameSize %>
                   </option>
                   <% } %>
 
-                    <option value="<%= size.sizeId %>">
-                      <%= size.nombre %>
+                    <option value="<%= size.id %>">
+                      <%= size.nameSize %>
                     </option>
                     <% }) %>
             </select>
@@ -81,15 +81,15 @@
 
             <select name="color" id="color">
 
-              <% colores.forEach(color=> { %>
-                <% if (color.colorId==product.color ) { %>
-                  <option value="<%= color.colorId %>" selected>
-                    <%= color.nombre %>
+              <% colors.forEach(color=> { %>
+                <% if (color.id==product.colorId ) { %>
+                  <option value="<%= color.id %>" selected>
+                    <%= color.nameColor %>
                   </option>
                   <% } %>
 
-                    <option value="<%= color.colorId %>">
-                      <%= color.nombre %>
+                    <option value="<%= color.id %>">
+                      <%= color.nameColor %>
                     </option>
                     <% }) %>
             </select>
@@ -124,10 +124,10 @@
               </button>
 
               <div class="botones">
-                <button class="addcart">
-                  <a href="/products/product-edition/<%= product.id %>" class="action-button edit">ELIMINAR PRODUCTO</a>
-
-                </button>
+                <form class="addcart" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                  <button class="action-button edit">ELIMINAR PRODUCTO</button>
+                
+                </form>
 
 
               </div>
