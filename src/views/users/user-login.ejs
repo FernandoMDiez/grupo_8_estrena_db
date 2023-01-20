@@ -16,7 +16,7 @@
             <h1 class="title">Login</h1>
             <div class="inputs">
               <label for="mail">E-mail</label>
-              <input type="email" name="mail" id="mail" placeholder="Mail" required>
+              <input type="email" name="mail" id="mail" placeholder="Mail">
               <% if (locals.errors && errors.mail) { %>
                 <div>
                   <%=errors.mail.msg %>
@@ -25,7 +25,7 @@
             </div>
             <div class="inputs">
               <label for="password">Contraseña</label>
-              <input type="password" name="password" id="password" placeholder="Contraseña" required>
+              <input type="password" name="password" id="password" placeholder="Contraseña">
               <% if (locals.errors && errors.password) { %>
                 <div>
                   <%=errors.password.msg %>
@@ -37,7 +37,7 @@
               <input type="checkbox" name="recordar_usuario" id="recordar_usuario">
             </div>
             <div class="account-buttons">
-              <button type="reset" class="account res">Cancelar</button>
+              <a class="account res" href="/">Cancelar</a>
               <button type="submit" class="account sub">Ingresar</button>
             </div>
             <p>O Ingresar con: </p>

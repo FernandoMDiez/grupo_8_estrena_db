@@ -6,12 +6,18 @@
     <nav>
       <ul>
         <a href="/products/product-creation">Crear Producto</a></li>
-        <a href="/users/user-register">Registro de usuario</a></li>
-        <a href="/users/user-profile">Perfil de usuario</a></li>
-        <a href="/users/logout">Logout de usuario</a></li>
-        <a href="/users/perfil-user-list">Listado de Perfiles</a></li>
-        <a href="/users/perfil-user-create">Crear Perfiles</a></li>
-        <a href="/users/user-list">Listado de Usuarios</a></li>
+
+
+        <% if (locals. isLogged) { %>
+          <a href="/users/user-profile">Perfil de usuario</a></li>
+          <a href="/users/logout">Logout de usuario</a></li>
+          <% } else { %>
+            <a href="/users/user-login">Ingresar</a></li>
+            <a href="/users/user-register">Registro de usuario</a></li>
+            <% } %>
+              <a href="/users/perfil-user-list">Listado de Perfiles</a></li>
+              <a href="/users/perfil-user-create">Crear Perfiles</a></li>
+              <a href="/users/user-list">Listado de Usuarios</a></li>
       </ul>
     </nav>
     <div class="controls">
@@ -28,11 +34,10 @@
           <img src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png" alt="">
         </a>
         <div class="user">
-          <% if (typeof data !='undefined' ) { %>
-
-            <p> Usuario: <%= data.firstName %>
+          <% if (locals. isLogged) { %>
+            <p> Usuario: <%= locals.usuarioLogueado.firstName %>
             </p>
-            <img src="/images/users/<%= data.image %>" alt="">
+            <img src="/images/users/<%= locals.usuarioLogueado.image %>" alt="">
 
 
             <% } else { %>

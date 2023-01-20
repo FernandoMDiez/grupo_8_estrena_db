@@ -10,15 +10,15 @@ const mainController = {
   index: (req, res) => {
     // res.sendFile(path.resolve(__dirname, "../views/home.html"));
     // res.render("home", { products, toThousand });
-    if (req.session.usuarioLogueado) {
-      let data = req.session.usuarioLogueado;
-      console.log(data);
-      console.log("hay datos en la sesion");
-      // res.render("home", { products, toThousand });
-      res.render("home", { products, toThousand, data });
-    } else {
-      res.render("home", { products, toThousand });
-    }
+    //if (req.session.usuarioLogueado) {
+    // let data = req.session.usuarioLogueado;
+    // console.log(data);
+    // console.log("hay datos en la sesion");
+    // res.render("home", { products, toThousand });
+    // res.render("home", { products, toThousand, data });
+    // } else {
+    res.render("home", { products, toThousand });
+    // }
   },
 };
 

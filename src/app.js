@@ -7,6 +7,7 @@ var userRouter = require("./routers/userRouter"); //se la usa para la ruta de Us
 var methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
 var session = require("express-session"); // se la requiere para sessiones
 const cookie = require("cookie-parser"); // se las requiere para cookies
+const userLogedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 /* Declaraciones para el uso por medio del acces pont en este caso app */
 var app = express(); // se declara y asigna el acces ponit
@@ -26,7 +27,7 @@ app.use(
     saveUninitialized: false,
   })
 );
-
+app.use(userLogedMiddleware);
 //declaro todas las rutas
 app.use("/", mainRouter); //Ruta Principal
 app.use("/products", productRouter); // Ruta de Productos

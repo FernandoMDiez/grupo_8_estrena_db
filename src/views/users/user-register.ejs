@@ -21,8 +21,8 @@
               <% if (typeof errors!="undefined" && errors !="" ) { %>
                 <% errors.forEach(error=> { %>
                   <% if (error.param=="firstName" ) { %>
-                    <!--    <p>Errores: <%= error.msg %>-->
-                    <!--   </p>-->
+                    <p>Errores: <%= error.msg %>
+                    </p>
                     <% } %>
                       <% }) %>
                         <% } %>
@@ -70,7 +70,7 @@
               <label for="perfilId">Categoria</label>
               <select name="perfilId" id="perfilId" required>
                 <option value="Seleccionar">Seleccionar Perfil</option>
-                <% user.forEach(perfil=> { %>
+                <% perfiles.forEach(perfil=> { %>
                   <option value="<%= perfil.id %>">
                     <%= perfil.namePerfil %>
                   </option>

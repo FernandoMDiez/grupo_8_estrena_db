@@ -23,13 +23,13 @@ let validationCamps = [
     .isEmail()
     .withMessage("Debe ingresar un E-Mail valido"),
 
-  /* check("category").custom((value, { req }) => {
+  check("perfilId").custom((value, { req }) => {
     if (value == null || value == "Seleccionar") {
-      throw new Error("Debe seleccionar una Categoria");
+      throw new Error("Debe seleccionar un Perfil");
     } else {
       return true;
     }
-  }),*/
+  }),
 
   check("password")
     .notEmpty()
