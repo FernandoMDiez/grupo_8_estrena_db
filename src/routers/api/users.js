@@ -6,7 +6,7 @@ const usersApiController = require("../../controllers/api/usersApiController");
 router.get("/", usersApiController.userListActivos);
 
 //Listado de usuario - no Activos
-router.get("/", usersApiController.userListBajas);
+//router.get("/", usersApiController.userListBajas);
 //Detalle de un usuario
 router.get("/:id", usersApiController.userDetail);
 

@@ -17,7 +17,7 @@ function userLogMiddleware(req, res, next) {
   }
 
   if (req.session.usuarioLogueado) {
-    // res.locals.userLogged = true;
+    res.locals.userLogged = true;
     // return res.redirect("users/user-profile");
     return res.redirect("user-profile");
   }

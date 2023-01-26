@@ -4,6 +4,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const validationProduct = require("../middlewares/productMiddleware");
+const userVisitMiddleware = require("../middlewares/userVisitMiddleware");
 //const controller = require("../controllers/mainController");
 
 //configuracion de multer
@@ -28,7 +29,7 @@ router.get("/product-detail/:id", controller.productDet); // punto 3 sprint 4
 
 /***********************************   INICIO    EDICION DE PRODUCTO   ************************ ***/
 /*** GET EDITAR UN  PRODUCTO ***/
-router.get("/product-edition/:id", controller.productEdi);
+router.get("/product-edition/:id", userVisitMiddleware, controller.productEdi);
 
 /*** PUT  EDITAR UN  PRODUCTO ***/
 router.put(
@@ -43,7 +44,7 @@ router.put(
 /***********************************   INICIO   CREACION  DE PRODUCTO   ************************ ***/
 
 /*** GET CREATE ONE PRODUCT ***/
-router.get("/product-creation", controller.productCre); // punto 2 sprint 4
+router.get("/product-creation", userVisitMiddleware, controller.productCre); // punto 2 sprint 4
 
 /*** POST CREATE ONE PRODUCT ***/
 router.post(

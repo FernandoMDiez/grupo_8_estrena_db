@@ -7,6 +7,19 @@ const productsApiController = {
   productList: async (req, res) => {
     try {
       products = await db.Product.findAll({ include: { all: true } });
+      for (let i = 0; i < products.length; i++) {
+        products[i].setDataValue(
+          "urlImage",
+          `http://localhost:3005/images/${products[i].image}`
+        );
+      }
+      products = {
+        meta: {
+          status: 200,
+          total: products.length,
+        },
+        data: products,
+      };
       return res.json(products);
     } catch (error) {
       res.send(error);
